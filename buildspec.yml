@@ -5,7 +5,7 @@ phases:
     - $(aws ecr get-login --region ap-northeast-1 --no-include-email)
   build: 
     commands: 
-    - docker build -t -t cfml .
+    - docker build -t cfml .
     - docker tag cfml:latest $REPOSITORY_URI:latest
   post_build: 
     commands: 
