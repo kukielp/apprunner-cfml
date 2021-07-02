@@ -1,4 +1,5 @@
-FROM ortussolutions/commandbox:latest
+ARG REPOSITORY_ARG=ortussolutions/commandbox
+FROM $REPOSITORY_ARG
 COPY ./app /app
 COPY ./warm.sh ${BUILD_DIR}/util/warm.sh
 RUN chmod +x ${BUILD_DIR}/util/warm.sh
