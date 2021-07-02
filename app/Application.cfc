@@ -12,7 +12,7 @@ component {
         }else{
             application.start++;
         }
-        application.version = "v3";
+        application.version = "v4";
 
         var aws = new com.aws();
         var response = aws.secretsmanager.getSecretValue( 'DynamoID' );
