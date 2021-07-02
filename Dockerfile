@@ -1,6 +1,10 @@
 FROM ortussolutions/commandbox:latest
 COPY ./app /app
+COPY ./warm.sh ${BUILD_DIR}/util/warm.sh
+RUN chmod +x ${BUILD_DIR}/util/warm.sh
 
+# WARM UP THE SERVER and install CFPM
+RUN ${BUILD_DIR}/util/warm.sh
 
-# WARM UP THE SERVER WITH THE NEW EXTENSION
-RUN ${BUILD_DIR}/util/warmup-server.sh
+# WARM UP THE SERVER
+# RUN ${BUILD_DIR}/util/warmup-server.sh
